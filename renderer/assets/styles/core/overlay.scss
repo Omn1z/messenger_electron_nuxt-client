@@ -1,0 +1,28 @@
+@keyframes overlayInFrame {
+  to {
+    background: rgba(0, 0, 0, 0.35);
+  }
+}
+@keyframes overlayOutFrame {
+  to {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000000000;
+  background: rgba(0, 0, 0, 0);
+  animation: overlayInFrame 0.2s forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.out {
+    background: rgba(0, 0, 0, 0.35);
+    animation: overlayOutFrame 0.2s forwards;
+  }
+}

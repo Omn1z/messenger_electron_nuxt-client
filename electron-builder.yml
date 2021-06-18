@@ -1,0 +1,14 @@
+appId: cloud.labs.fecurity
+productName: Fecurity Messenger
+copyright: Copyright © 2021 Artur Gaffarov
+directories:
+  output: dist
+  buildResources: resources
+files:
+  - from: .
+    filter:
+      - package.json
+      - app
+publish: null
+win:
+  icon: "win.ico"

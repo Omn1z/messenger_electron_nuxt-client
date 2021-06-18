@@ -1,0 +1,63 @@
+.avatar {
+  position: relative;
+  width: 128px;
+  height: 128px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg, img {
+    position: relative;
+    width: 75%;
+    height: 75%;
+  }
+  img {
+    border-radius: 50%;
+  }
+  svg {
+    cursor: pointer;
+  }
+
+  .container {
+    position: absolute;
+    width: 75%;
+    height: 75%;
+
+    .icon {
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      svg {
+        circle {
+          transition: 0.2s fill;
+          fill: white;
+        }
+        path {
+          transition: 0.2s stroke;
+          stroke: #4F5E7B
+        }
+      }
+
+      &:hover {
+        svg {
+          path {
+            stroke: #FF6767
+          }
+        }
+      }
+
+      &:focus, &:active {
+        svg {
+          circle {
+            fill: #FF6767;
+          }
+          path {
+            stroke: #FFFFFF;
+          }
+        }
+      }
+    }
+  }
+}

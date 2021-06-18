@@ -1,0 +1,78 @@
+$num_of_options: 3;
+$header_width: 20px;
+$controller_width: $header_width * $num_of_options + (2px * ($num_of_options - 1));
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - #{$header_width});
+}
+
+.header__padding {
+  margin-top: $header_width;
+}
+
+.header {
+  position: fixed;
+  z-index: 2147483647;
+  top: 0;
+  left: 0;
+  height: $header_width;
+  width: 100%;
+  margin: 0;
+  background: white;
+
+  &__movable {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 5px;
+    width: calc(100% - #{$controller_width} - 6px);
+    height: calc(#{$header_width} - 5px);
+  }
+
+  &__controllers {
+    position: absolute;
+    right: 0;
+    width: $controller_width;
+    height: $header_width;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 2px;
+
+    &__option {
+      width: $header_width;
+      height: $header_width;
+      transition: background-color 0.1s;
+      background-color: white;
+      padding: 2px;
+
+      svg {
+        rect, path {
+          stroke: #4F5E7B;
+          opacity: 0.8;
+          transition: opacity 0.1s, stroke 0.1s;
+        }
+      }
+
+      &:hover {
+        background-color: #F1F3F8;
+
+        svg {
+          rect, path {
+            opacity: 1;
+          }
+        }
+      }
+
+      &:nth-child(3):hover {
+        background-color: #F55C66;
+        svg {
+          rect, path {
+            stroke: white;
+          }
+        }
+      }
+    }
+  }
+}

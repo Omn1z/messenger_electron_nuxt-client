@@ -1,0 +1,80 @@
+$sizes: ("sm":1012px, "md":1236px, "lg":1460px, "xl":1684px);
+@mixin media($minmax, $media) {
+  @each $size, $resolution in $sizes {
+    @if $media == $size {
+      @media only screen and (#{$minmax}-width: $resolution) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin font-normal-normal-12-20 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+@mixin font-normal-normal-13-20 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+@mixin font-normal-normal-14-20 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@mixin font-normal-normal-14-24 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+@mixin font-normal-500-12-20 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+@mixin font-normal-500-13-20 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+@mixin font-normal-500-14-20 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@mixin font-normal-500-14-24 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+@mixin font-normal-500-16-24 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin font-normal-bold-12-100P {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 100%;
+}

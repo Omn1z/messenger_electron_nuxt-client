@@ -1,0 +1,110 @@
+.channel_view {
+  position: relative;
+  width: 100%;
+  padding: 16px 0;
+  border-bottom: 1px rgba(79, 94, 123, 0.1) solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: center;
+  cursor: pointer;
+
+  &.active, &:hover {
+    &:before {
+      content: '';
+      position: absolute;
+      left: -16px;
+      top: 0;
+      width: 358px;
+      height: 80px;
+      background: rgba(224, 227, 238, 0.8);
+    }
+  }
+
+  &__avatar {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    img {
+      border-radius: 50%;
+    }
+    svg {
+      position: absolute;
+      bottom: 1px;
+      right: 1px;
+    }
+    &.channel_controller_preload {
+      background: linear-gradient(90deg, #CFCFD9 0%, #DADADD 100%), #DADADD;
+    }
+  }
+  &__content {
+    position: relative;
+    width: 184px;
+    height: 48px;
+    &__name {
+      @include font-normal-500-16-24;
+      color: #1B1A57;
+      position: relative;
+      width: 100%;
+      height: 24px;
+      &.channel_controller_preload {
+        background: linear-gradient(90deg, #CFCFD9 0%, #DADADD 100%);
+        border-radius: 5px;
+      }
+    }
+    &__message {
+      @include font-normal-normal-12-20;
+      color: rgba(79, 94, 123, 0.8);
+      position: relative;
+      width: 100%;
+      height: 20px;
+      margin-top: 4px;
+      overflow: hidden;
+      &.channel_controller_preload {
+        background: linear-gradient(90deg, #CFCFD9 0%, #DADADD 100%), #DEDEE0;
+        border-radius: 5px;
+      }
+    }
+  }
+  &__info {
+    position: relative;
+    width: 68px;
+    height: 48px;
+    &__date {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      text-align: right;
+      color: rgba(79, 94, 123, 0.8);
+      @include font-normal-normal-12-20;
+      &.channel_controller_preload {
+        background: linear-gradient(90deg, #CFCFD9 0%, #DADADD 100%), #DADADD;
+        border-radius: 5px;
+      }
+    }
+    &__unread {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &.channel_controller_preload {
+        background: linear-gradient(90deg, #CFCFD9 0%, #DADADD 100%), #DADADD;
+      }
+      &.unread {
+        background: #2F80ED;
+      }
+      i {
+        color: #F2F3F7;
+        @include font-normal-bold-12-100P;
+      }
+    }
+  }
+}

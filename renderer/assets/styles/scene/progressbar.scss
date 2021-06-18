@@ -1,0 +1,41 @@
+.progressbar__line {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  height: 2px;
+  background: #E6E6F0;
+  border-radius: 5px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 2px;
+    background: #2F80ED;
+    transition: width 0.5s;
+  }
+
+  &.p-25:before {
+    animation: awaiter 0.5s forwards;
+    width: 25%
+  }
+
+  &.p-50:before {
+    animation: awaiter 0.5s forwards;
+    width: 50%
+  }
+
+  &.p-75:before {
+    animation: awaiter 0.5s forwards;
+    width: 75%
+  }
+
+  &.p-100:before {
+    animation: awaiter 0.5s forwards;
+    width: 100%
+  }
+}

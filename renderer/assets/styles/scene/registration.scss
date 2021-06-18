@@ -1,0 +1,120 @@
+.registration {
+  &__progress {
+    &__container {
+      position: fixed;
+      top: calc(7% + #{$header_width});
+      width: 320px;
+      height: 38px;
+      left: calc(50% - 160px);
+
+      &__wrapper {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      &__step {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #E2E5EF;
+        border: 4px solid #F0F0F8;
+        transition: filter 0.5s, background 0.5s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        * {
+          transition: filter 0.5s, background 0.5s, fill 0.5s, stroke 0.5s;
+        }
+
+        &.active {
+          background: #2F80ED;
+          filter: drop-shadow(0px 12px 28px rgba(0, 0, 0, 0.16));
+        }
+
+        &.passed {
+          background: #FFFFFF;
+        }
+      }
+    }
+  }
+  &__form {
+    &__name {
+      width: 360px;
+      height: 454px;
+    }
+    &__username {
+      width: 360px;
+      height: 347px;
+    }
+    &__avatar {
+      width: 360px;
+      height: 396px;
+    }
+
+    &__name, &__username, &__avatar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      overflow: hidden;
+      button {
+        width: 100%;
+      }
+    }
+  }
+  &__input {
+    position: relative;
+    width: 100%;
+    height: 79px;
+
+    label {
+      display: block;
+      @include font-normal-normal-14-24;
+      color: rgba(99, 122, 138, 0.68);
+      width: 100%;
+      height: 36px;
+    }
+    input[type=text] {
+      position: relative;
+      @include font-normal-500-14-24;
+      color: #4F5E7B;
+      padding: 6px 0;
+      width: 100%;
+      height: 36px;
+      outline: none;
+      border: none;
+      background: transparent;
+      border-bottom: 1px;
+      border-bottom-color: rgba(225, 225, 235, 0.5);
+      border-bottom-style: solid;
+      transition: border-bottom-color 0.2s;
+      &::placeholder {
+        color: rgba(79, 94, 123, 0.5);
+      }
+      &:focus {
+        border-bottom-color: rgba(47, 128, 237, 0.5);
+      }
+      &.error {
+        border-bottom-color: rgba(255, 103, 103, 0.5);
+        &:focus {
+          border-bottom-color: rgb(255, 103, 103);
+        }
+      }
+      &.success {
+        border-bottom-color: rgba(101, 205, 151, 0.5);
+        &:focus {
+          border-bottom-color: rgb(101, 205, 151);
+        }
+      }
+    }
+  }
+}

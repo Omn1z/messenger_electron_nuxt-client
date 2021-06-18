@@ -1,0 +1,33 @@
+.btn {
+  user-select: none;
+  cursor: pointer;
+
+  &.flat {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 24px;
+    background-color: #2F80ED;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: #F2F3F7;
+    transition: 0.1s background-color;
+    &:hover {
+      background-color: #2BA4D8;
+    }
+    &:disabled {
+      cursor: default;
+      background: #D2DCE9;
+    }
+    &.sp {
+      @include font-normal-500-14-24;
+      letter-spacing: 0.015em;
+    }
+    &.full {
+      width: 100%;
+    }
+  }
+}
+

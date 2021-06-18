@@ -1,0 +1,94 @@
+.setting {
+  &__controller {
+    padding: 24px;
+    width: 374px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+    background: #FFFFFF;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.16);
+    border-radius: 8px;
+    &__title {
+      width: 100%;
+      height: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      svg {
+        cursor: pointer;
+        path {
+          stroke-opacity: 0.8;
+          transition: 0.2s stroke-opacity;
+        }
+        &:hover {
+          path {
+            stroke-opacity: 1;
+          }
+        }
+      }
+    }
+    &__input {
+      position: relative;
+      width: 100%;
+      height: 67px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      label {
+        display: block;
+        @include font-normal-normal-14-24;
+        color: rgba(99, 122, 138, 0.68);
+        width: 100%;
+        height: 36px;
+      }
+
+      input[type=text] {
+        position: relative;
+        @include font-normal-500-14-24;
+        color: #4F5E7B;
+        padding: 6px 0;
+        width: 100%;
+        height: 36px;
+        outline: none;
+        border: none;
+        background: transparent;
+        border-bottom: 1px;
+        border-bottom-color: rgba(225, 225, 235, 0.5);
+        border-bottom-style: solid;
+        transition: border-bottom-color 0.2s;
+        &::placeholder {
+          color: rgba(79, 94, 123, 0.5);
+        }
+        &:focus {
+          border-bottom-color: rgba(47, 128, 237, 0.5);
+        }
+        &.error {
+          border-bottom-color: rgba(255, 103, 103, 0.5);
+          &:focus {
+            border-bottom-color: rgb(255, 103, 103);
+          }
+        }
+        &.success {
+          border-bottom-color: rgba(101, 205, 151, 0.5);
+          &:focus {
+            border-bottom-color: rgb(101, 205, 151);
+          }
+        }
+      }
+    }
+    &__row {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+    }
+  }
+}

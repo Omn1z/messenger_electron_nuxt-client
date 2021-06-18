@@ -1,0 +1,61 @@
+.input__phone__number {
+  position: relative;
+  width: 100%;
+  height: 38px;
+  padding: 6px 0;
+  user-select: text;
+  cursor: text;
+  outline: none;
+  display: flex;
+  align-items: center;
+
+  .input__text {
+    padding-left: 16px;
+    @include font-normal-500-14-24;
+    color: #4F5E7B;
+  }
+
+
+  .separator {
+    @include font-normal-500-14-24;
+    user-select: none;
+    color: rgba(79, 94, 123, 0.5);
+  }
+
+  @keyframes input__phone__number__line__animation__input {
+    0% {
+      opacity: 0;
+      width: 0;
+      left: 50%;
+    }
+    30% {
+      opacity: 1;
+    }
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 0;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px rgba(225, 225, 235, 0.5) solid;
+  }
+  &.active:before {
+    content: '';
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 0;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px rgb(47, 128, 237) solid;
+    animation: 0.3s input__phone__number__line__animation__input forwards;
+  }
+  &.active.error:before {
+    border-bottom: 1px #FF6767 solid;
+  }
+  &.active.success:before {
+    border-bottom: 1px #65CD97 solid;
+  }
+}

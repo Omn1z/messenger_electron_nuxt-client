@@ -1,0 +1,29 @@
+.input__sms__code {
+  position: relative;
+  width: 100%;
+  height: 56px;
+  cursor: text;
+  outline: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 12px;
+
+  .box {
+    border-radius: 8px;
+    width: 100%;
+    background: rgba(202, 202, 217, 0.38);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.015em;
+    color: #4F5E7B;
+  }
+}

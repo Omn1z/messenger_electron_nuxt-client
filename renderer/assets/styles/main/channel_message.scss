@@ -1,0 +1,70 @@
+.channel_message {
+  position: relative;
+  width: max-content;
+  min-width: 100px;
+  max-width: 400px;
+  height: auto;
+  margin: 8px;
+  flex: 0 1000 auto;
+
+  &__body {
+    user-select: text;
+    position: relative;
+    @include font-normal-normal-13-20;
+    color: #4F5E7B;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px 8px 8px 0;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: flex-start;
+    gap: 8px;
+
+    img {
+      cursor: pointer;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      i {
+        text-decoration: underline;
+        cursor: pointer;
+        font-style: normal;
+      }
+    }
+
+    &__image {
+      max-width: 100%;
+      max-height: 170px;
+      border-radius: 10px;
+    }
+  }
+
+  &__status {
+    margin-top: 8px;
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4px;
+    p {
+      flex: 0 1000 100%;
+      width: 100%;
+      @include font-normal-500-12-20;
+      color: rgba(79, 94, 123, 0.5);
+      text-align: right;
+    }
+  }
+
+  &.self &__body {
+    background: #2F80ED;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+}

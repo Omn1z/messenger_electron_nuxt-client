@@ -1,0 +1,129 @@
+$scene_welcome_height: 28.5%;
+$home__page__container_height: 100% - $scene_welcome_height;
+$home__page__container_height_half: $home__page__container_height / 2;
+
+.home__page__container {
+  @keyframes home__page__container_appear {
+    0% {
+      height: 0;
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes home__page__container_hide {
+    30% {
+      opacity: 0;
+    }
+    100% {
+      height: $home__page__container_height;
+      opacity: 0;
+    }
+  }
+
+  position: relative;
+  width: 100%;
+  height: $home__page__container_height;
+  animation: 1.35s home__page__container_appear forwards;
+  overflow: hidden;
+}
+
+.home_page_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  h2 {
+    color: #4F5E7B;
+    font-size: 24px;
+  }
+
+  p {
+    margin-top: 16px;
+    color: #4F5E7B;
+    opacity: 0.8;
+    font-size: 13px;
+  }
+
+  .action_btn {
+    width: 100%;
+    cursor: pointer;
+  }
+
+  &__second {
+    @keyframes home__page__container_hide_second {
+      100% {
+        margin-top: 300%;
+      }
+    }
+
+    @keyframes home__page__container_appear_second {
+      0% {
+        margin-top: 300%;
+      }
+      100% {
+        margin-top: 48px;
+      }
+    }
+
+    position: relative;
+    width: 100%;
+    margin-top: 48px;
+    overflow: hidden;
+    animation: 1.35s home__page__container_appear_second forwards;
+  }
+}
+
+.scene {
+  &__welcome {
+    @keyframes frameHideBlock {
+      100% {
+        height: 0;
+      }
+    }
+
+    @keyframes frameAppearBlock {
+      0% {
+        height: 0;
+        opacity: 0.85;
+      }
+      33% {
+        opacity: 0.85;
+      }
+    }
+
+    position: relative;
+    width: 100%;
+    height: $scene_welcome_height;
+    background: linear-gradient(92.42deg, #3B7CBC 0%, #1A74C7 100%);
+    overflow: hidden;
+    animation: 1s frameAppearBlock forwards;
+    &__logo {
+      @keyframes frameAppearLogo {
+        0% {
+          transform: translate(0, -20%) rotate(35deg);
+        }
+      }
+      @keyframes moveLogoWhenSceneClosing {
+        100% {
+          transform: translate(20%, -70%) rotate(17deg);
+        }
+      }
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      animation: 1s frameAppearLogo forwards;
+      svg {
+        path {
+          fill: white;
+          fill-opacity: 0.86;
+        }
+      }
+    }
+  }
+}
